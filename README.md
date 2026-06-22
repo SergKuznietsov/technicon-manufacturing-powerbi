@@ -1,110 +1,74 @@
-# TechniCon Manufacturing GmbH — Controlling Dashboard
+# DAX Documentation — TechniCon Manufacturing GmbH
 
-A Power BI financial controlling portfolio project built around a fictional Mittelstand industrial company. 18 dashboard pages covering P&L, Budget vs. Actual, Cash Flow, Working Capital, and Debt & Liquidity analysis — built end-to-end with Python-generated mock data, a star schema model, and a layered DAX architecture.
+Power BI controlling portfolio · 262 working measures · Star schema, 5 fact tables / 4 dimension tables.
 
-**Author:** Serhii Kuznietsov — Financial Analyst / Data Analyst · Power BI Developer · Dortmund, NRW, Germany
-[LinkedIn](https://linkedin.com/in/serg-kuznietsov) · [LinkedIn post series](#linkedin-post-series)
+> Portfolio project by Serhii Kuznietsov. All data is fictional, generated via Python and modeled on 3M (MMM) 10-K FY2024 structure. Not affiliated with any real company.
 
-> Portfolio project. Mock data, fictional company. Not affiliated with 3M or any real company.
+## Build methodology
 
----
+Every measure in this model was built using a strict 3-layer sequence. This is not a stylistic choice — it is the methodology used to prevent silent data errors before they reach a visual.
 
-## What this is
+**Layer 0 — Data verification.**
+Before writing a single measure, the raw fact table is queried directly in DAX Query View (`EVALUATE`, `COUNTROWS`, `SUMMARIZE`) to confirm row counts, key uniqueness, and date format. Integer `Date_Key` (format `YYYYMMDD`) breaks Power BI's built-in time intelligence functions silently — `LASTDATE()` returns `BLANK()` with no error — so this step exists specifically to catch that class of failure before it propagates into Layer 1.
 
-TechniCon Manufacturing GmbH is a fictional Mittelstand company (~€645M revenue, ~2,800 employees, HQ Düsseldorf) built to demonstrate senior financial controlling competency: budget variance analysis, cash flow and working capital management, debt structuring, and covenant/stress-test monitoring — the kind of analysis a controller actually does, not a generic BI showcase.
+**Layer 1 — Base measures.**
+Atomic, single-purpose measures built directly on fact tables (`Amount PnL`, `Amount CF`, `Amount BS`, `AR Total`, `Debt Outstanding`, etc.). These never branch on scenario or apply business logic — they are the only measures in the model allowed to touch a fact table column directly with `SUM`/`SUMX`. Every higher-layer measure calls one of these rather than re-referencing a column.
 
-The dataset covers 2020–2025 with intentional stress scenarios:
+**Layer 2 — Visual layer.**
+Composed measures that branch (`SWITCH`, `IF`), apply scenario filters (`Actual Amount`, `Budget Amount`), compute ratios (`DIVIDE` with explicit zero-fallback), or feed a specific visual (`SWITCH` on a disconnected dimension table for matrix rows, `CF Value` for the cash flow bridge chart, color-coding helpers). These are the measures wired directly into report visuals.
 
-| Period | Scenario |
+This separation matters for one practical reason: when a number looks wrong on a dashboard, the layer tells you where to look. If a Layer 2 ratio is off, check the Layer 1 inputs first — Layer 0 already confirmed the data is sound, so the bug is almost always in the Layer 2 composition logic, not the data.
+
+## Domain files
+
+| File | Covers |
 |---|---|
-| 2020 | COVID-19 demand shock — revenue decline, margin compression |
-| 2022–2023 | Litigation reserve — OCF dip, temporary covenant breach |
-| 2024 | Normalization — margin recovery, deleveraging |
-| 2025 | Forecast scenario, based on management guidance |
+| [`Shared_Base.md`](./Shared_Base.md) | Layer 1 amount measures, scenario hardcoding pattern, language/translation helpers |
+| [`PnL.md`](./PnL.md) | P&L Overview, P&L Statement, Trends, Profitability Drill, Bridge Chart |
+| [`Budget_vs_Actual.md`](./Budget_vs_Actual.md) | Variance Heatmap, Variance Drill, Cost Center Plan vs Actual |
+| [`Cash_Flow.md`](./Cash_Flow.md) | Cash Flow Statement, Operating CF Trend, Free Cash Flow & Conversion |
+| [`Working_Capital.md`](./Working_Capital.md) | Cash Conversion Cycle, Receivables Aging & Risk |
+| [`Cost_Center_Allocation.md`](./Cost_Center_Allocation.md) | Overhead Allocation page |
+| [`Debt_Liquidity.md`](./Debt_Liquidity.md) | Debt Structure & Maturity, Leverage & Coverage Ratios, Refinancing Risk & Stress Test |
+| [`Balance_Sheet_Support.md`](./Balance_Sheet_Support.md) | Shared BS snapshot logic underlying Working Capital and Debt pages |
+| [`Known_Issues.md`](./Known_Issues.md) | Documented architectural constraints (not bugs) — scenario hardcoding, dual sign conventions, visual-level limitations |
 
-## Dashboard structure (18 pages)
+## Reading a measure entry
 
-| Section | Pages | Content |
-|---|---|---|
-| P&L Dashboard | 1–3 | Executive summary · P&L statement · multi-year trends |
-| Budget vs. Actual | 4–6 | Profitability drill · variance heatmap · bridge chart |
-| Monthly P&L | 7–8 | Variance drill-down · management commentary |
-| Cash Flow | 9–11 | Cash flow statement · OCF trend · FCF & conversion |
-| Working Capital | 12–15 | Cash conversion cycle · AR aging & risk · plan vs actual by cost center · overhead allocation |
-| Debt & KPI | 16–18 | Debt structure & maturity · leverage & coverage ratios · refinancing risk & stress test |
+Each measure in the domain files is documented as:
 
-## Key 2024 (ACT) figures
+```
+### Measure Name
+**Layer:** 0 / 1 / 2
+**Depends on:** [other measures or tables]
+**Used in:** [page/visual]
 
-| KPI | Value |
+​```dax
+<formula>
+​```
+
+Notes on any non-obvious logic (sign conventions, filter context, known limitations).
+```
+
+## Data model summary
+
+**Fact tables:** `fact_pnl` · `fact_balance_sheet` · `fact_cashflow` · `fact_debt` · `fact_ar_aging` · `fact_cogs_detail` · `fact_sales` / `fact_sales_detail` · `fact_cc_allocated_amounts` · `fact_cc_overhead_pool`
+
+**Dimension tables:** `dim_Calendar` · `dim_Scenario` · `dim_Division` · `dim_gl_account` · `dim_cost_center` · `dim_product_group` · `dim_customer_segment` · `dim_translations` / `dim_language`
+
+**Disconnected dimension tables (visual-only, not in star schema):** `dim_PL_Structure`, `Bridge_PL`, `'BvA Bridge Categories'`, `dim_CF_Structure`, `dim_GL_Category_Sort`, `dim_stress_levels`, `dim_rate_shock`, `dim_icr_sensitivity`, `dim_nd_sensitivity`, `'Stress_EBITDA_%'` — these exist purely to drive `SWITCH`-based matrix/chart measures (the Layer 2 pattern for putting calculated values on matrix rows, since Power BI matrices cannot show DAX-calculated row headers directly).
+
+## Key formulas reference
+
+| KPI | Formula |
 |---|---|
-| Net Revenue | €645.08M |
-| Gross Margin | 38.19% |
-| EBITDA Margin | 20.28% |
-| Net Income | €63.43M |
-| Net Margin | 9.83% |
-| Operating Cash Flow | €121.21M |
-| Free Cash Flow | €90.42M |
-| Cash Conversion Rate | 1.91x |
-| DSO / DPO / DIO | 45.9d / 38.7d / 58.9d |
-| Cash Conversion Cycle | 66.0d |
-| Total Debt | €254M |
-| Net Debt / EBITDA | 1.52x (covenant ceiling 3.5x) |
-| Interest Coverage Ratio | 7.93x (covenant floor 4.0x) |
-
-## Data model
-
-Star schema — 5 fact tables, 4 dimension tables:
-
-- **Fact tables:** `fact_pnl` · `fact_balance_sheet` · `fact_cashflow` · `fact_debt` · `fact_working_capital`
-- **Dimension tables:** `dim_calendar` · `dim_scenario` · `dim_division` · `dim_gl_account`
-
-Mock data generated in Python (pandas, numpy), with seasonality, noise, and plan-fact variance built in. Cost structure and margin ratios benchmarked against 3M's FY2024 10-K (COGS ~59%, SG&A ~17%, R&D ~4.4%, operating margin ~19.6%).
-
-### DAX architecture
-
-All measures follow a 3-layer build sequence, verified in DAX Query View before any visual is built:
-
-1. **Layer 0** — data verification (row counts, key checks, totals against source)
-2. **Layer 1** — base measures (Gross Margin %, EBITDA Margin %, FCF, Net Debt/EBITDA, DSO/DPO/DIO, and similar)
-3. **Layer 2** — visual-layer measures (formatting, conditional logic, what-if parameters)
-
-Design notes:
-- Balance sheet and debt tables are point-in-time snapshots — `LASTNONBLANK` over the calendar is used, never a plain `SUM`, since summing a stock value across periods produces a meaningless number.
-- `fact_cashflow` has no relationship to `dim_scenario`; `Scenario_ID = "ACT"` is hardcoded directly into the CF measures — an architectural constraint of the cash flow build, not a data error.
-- The 2022–2023 litigation reserve is modeled as a deliberate anomaly period, to demonstrate handling non-recurring items in financial analysis and covenant monitoring.
-
-## Tools
-
-Power BI Desktop · DAX · Python (pandas, numpy) · SAP FI/CO-aligned data structures (cost centers, profit centers, GL accounts, scenarios)
-
-## Repository contents
-
-- `/dashboard` — full PDF export of all 18 pages
-- `/data-generation` — Python script used to generate the mock dataset
-- `/dax` — DAX measure documentation by layer
-
-## LinkedIn post series
-
-This project was published as a serialized LinkedIn post series, each post covering one analytical theme:
-
-| Post | Topic | Pages |
-|---|---|---|
-| 0 | Origin story | — |
-| 0.5 | Star schema, behind the scenes | — |
-| 1 | P&L overview, statement & trends | 1–3 |
-| 2 | Profitability drill | 4 |
-| 3 | Variance heatmap & bridge chart | 5–6 |
-| 4 | Variance drill & commentary | 7–8 |
-| 5 | Cash flow statement & OCF trend | 9–10 |
-| 6 | Free cash flow & conversion | 11 |
-| 7 | Cash conversion cycle | 12 |
-| 8 | Receivables aging & risk | 13 |
-| 9 | Plan vs actual & overhead allocation | 14–15 |
-| 10 | Debt structure & leverage/coverage | 16–17 |
-| 11 | Refinancing risk & stress test | 16–18 |
-
-Follow along: [linkedin.com/in/serg-kuznietsov](https://linkedin.com/in/serg-kuznietsov)
-
----
-
-*Die Daten sind fiktiv — die Build-Logik dahinter nicht.*
+| Gross Margin % | (Revenue − COGS) / Revenue |
+| EBITDA Margin % | EBITDA / Revenue |
+| Cash Conversion Rate | OCF / Net Income |
+| DSO | AR / Revenue × 365 |
+| DPO | AP / COGS × 365 |
+| DIO | Inventory / COGS × 365 |
+| CCC | DSO + DIO − DPO |
+| Net Debt / EBITDA | (Debt − Cash) / EBITDA |
+| FCF | OCF − CAPEX |
+| Interest Coverage Ratio | EBIT / Interest Expense |
