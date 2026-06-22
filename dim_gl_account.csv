@@ -1,0 +1,61 @@
+GL_Account_ID,GL_Account_Name,GL_Category,GL_Subcategory,Financial_Statement,BS_Category,CF_Category,Sign_Convention,Is_COGS_Detail,Sort_Order
+PL001,Gross Revenue,Revenue,Gross,PnL,,,Credit,False,10
+PL002,Sales Deductions,Revenue,Deductions,PnL,,,Debit,False,20
+PL010,Raw Materials,COGS,Materials,PnL,,,Debit,True,100
+PL011,Direct Labor,COGS,Labor,PnL,,,Debit,True,110
+PL012,Manufacturing Overhead,COGS,Overhead,PnL,,,Debit,True,120
+PL013,Freight & Logistics,COGS,Logistics,PnL,,,Debit,True,130
+PL014,Inventory Write-downs,COGS,Write-downs,PnL,,,Debit,True,140
+PL020,Sales & Marketing,OpEx,SGA_Sales,PnL,,,Debit,False,200
+PL021,General & Administrative,OpEx,SGA_Admin,PnL,,,Debit,False,210
+PL022,Salaries & Benefits (non-prod),OpEx,SGA_Salaries,PnL,,,Debit,False,220
+PL023,Research & Development,OpEx,R&D,PnL,,,Debit,False,230
+PL024,Depreciation & Amortization,OpEx,D&A,PnL,,,Debit,False,240
+PL025,Other Operating Expenses,OpEx,Other_OpEx,PnL,,,Debit,False,250
+PL030,Interest Expense,Non-Operating,Interest_Exp,PnL,,,Debit,False,300
+PL031,Interest Income,Non-Operating,Interest_Inc,PnL,,,Credit,False,310
+PL032,FX Gains/Losses,Non-Operating,FX,PnL,,,Debit,False,320
+PL033,Other Non-operating,Non-Operating,Other_NonOp,PnL,,,Debit,False,330
+PL040,Income Tax,Tax,Tax,PnL,,,Debit,False,400
+BS001,Cash & Equivalents,Asset,Cash,BS,Current_Asset,,Debit,False,500
+BS002,Accounts Receivable,Asset,AR,BS,Current_Asset,,Debit,False,510
+BS003,Inventory — Raw Materials,Asset,Inventory_RM,BS,Current_Asset,,Debit,False,520
+BS004,Inventory — Work-in-Progress,Asset,Inventory_WIP,BS,Current_Asset,,Debit,False,530
+BS005,Inventory — Finished Goods,Asset,Inventory_FG,BS,Current_Asset,,Debit,False,540
+BS006,Prepaid Expenses,Asset,Prepaid,BS,Current_Asset,,Debit,False,550
+BS007,Other Current Assets,Asset,Other_CA,BS,Current_Asset,,Debit,False,560
+BS010,PP&E (Gross),Asset,PPE_Gross,BS,Non_Current_Asset,,Debit,False,600
+BS011,Accumulated Depreciation,Asset,Accum_Depr,BS,Non_Current_Asset,,Credit,False,610
+BS012,Intangible Assets,Asset,Intangibles,BS,Non_Current_Asset,,Debit,False,620
+BS013,Goodwill,Asset,Goodwill,BS,Non_Current_Asset,,Debit,False,630
+BS014,Other Non-current Assets,Asset,Other_NCA,BS,Non_Current_Asset,,Debit,False,640
+BS020,Accounts Payable,Liability,AP,BS,Current_Liability,,Credit,False,700
+BS021,Short-term Debt,Liability,ST_Debt,BS,Current_Liability,,Credit,False,710
+BS022,Current Portion LT Debt,Liability,CPLTD,BS,Current_Liability,,Credit,False,720
+BS023,Accrued Liabilities,Liability,Accrued,BS,Current_Liability,,Credit,False,730
+BS024,Tax Payable,Liability,Tax_Pay,BS,Current_Liability,,Credit,False,740
+BS025,Other Current Liabilities,Liability,Other_CL,BS,Current_Liability,,Credit,False,750
+BS030,Long-term Debt,Liability,LT_Debt,BS,Non_Current_Liability,,Credit,False,800
+BS031,Pension Obligations,Liability,Pension,BS,Non_Current_Liability,,Credit,False,810
+BS032,Other Non-current Liabilities,Liability,Other_NCL,BS,Non_Current_Liability,,Credit,False,820
+BS040,Share Capital,Equity,Share_Capital,BS,Equity,,Credit,False,900
+BS041,Retained Earnings,Equity,Retained_Earnings,BS,Equity,,Credit,False,910
+BS042,Other Reserves,Equity,Other_Reserves,BS,Equity,,Credit,False,920
+CF001,Net Income,CF,CFO_NetIncome,CF,,Operating,Debit,False,1000
+CF002,Depreciation & Amortization,CF,CFO_DA,CF,,Operating,Debit,False,1010
+CF003,Stock-based Compensation,CF,CFO_SBC,CF,,Operating,Debit,False,1020
+CF004,Change in Accounts Receivable,CF,CFO_AR,CF,,Operating,Debit,False,1030
+CF005,Change in Inventory,CF,CFO_Inv,CF,,Operating,Debit,False,1040
+CF006,Change in Accounts Payable,CF,CFO_AP,CF,,Operating,Debit,False,1050
+CF007,Change in Prepaid Expenses,CF,CFO_Prepaid,CF,,Operating,Debit,False,1060
+CF008,Change in Accrued Liabilities,CF,CFO_Accrued,CF,,Operating,Debit,False,1070
+CF009,Other Operating Adjustments,CF,CFO_Other,CF,,Operating,Debit,False,1080
+CF010,CAPEX,CF,CFI_CAPEX,CF,,Investing,Debit,False,1100
+CF011,Acquisitions,CF,CFI_Acq,CF,,Investing,Debit,False,1110
+CF012,Asset Disposals,CF,CFI_Disp,CF,,Investing,Debit,False,1120
+CF013,Other Investing,CF,CFI_Other,CF,,Investing,Debit,False,1130
+CF014,Debt Proceeds,CF,CFF_Proceeds,CF,,Financing,Debit,False,1200
+CF015,Debt Repayment,CF,CFF_Repayment,CF,,Financing,Debit,False,1210
+CF016,Dividend Payments,CF,CFF_Dividends,CF,,Financing,Debit,False,1220
+CF017,Share Buyback,CF,CFF_Buyback,CF,,Financing,Debit,False,1230
+CF018,Other Financing,CF,CFF_Other,CF,,Financing,Debit,False,1240

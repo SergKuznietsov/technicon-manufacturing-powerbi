@@ -1,0 +1,13 @@
+﻿Sender_CC_ID,Sender_CC_Name,Receiver_CC_ID,Receiver_CC_Name,Allocation_Driver,Allocation_Pct
+CC07,General & Administration,CC01,Production — Industrial,Headcount,0.4
+CC07,General & Administration,CC02,Production — Safety,Headcount,0.35
+CC07,General & Administration,CC03,Production — Precision,Headcount,0.25
+CC08,Logistics & Warehousing,CC01,Production — Industrial,Revenue_Share,0.45
+CC08,Logistics & Warehousing,CC02,Production — Safety,Revenue_Share,0.3
+CC08,Logistics & Warehousing,CC03,Production — Precision,Revenue_Share,0.25
+CC09,IT & Digital,CC01,Production — Industrial,Headcount,0.4
+CC09,IT & Digital,CC02,Production — Safety,Headcount,0.35
+CC09,IT & Digital,CC03,Production — Precision,Headcount,0.25
+CC10,Quality Assurance,CC01,Production — Industrial,Production_Volume,0.35
+CC10,Quality Assurance,CC02,Production — Safety,Production_Volume,0.4
+CC10,Quality Assurance,CC03,Production — Precision,Production_Volume,0.25

@@ -1,0 +1,13 @@
+﻿Sender_CC_ID,Sender_CC_Name,Receiver_CC_ID,Receiver_CC_Name,Allocation_Driver,Allocation_Pct,Total_Pool_EUR,Allocated_Amount_EUR
+CC07,General & Administration,CC01,Production — Industrial,Headcount,0.4,67341672.84,26936669.136000004
+CC07,General & Administration,CC02,Production — Safety,Headcount,0.35,67341672.84,23569585.494
+CC07,General & Administration,CC03,Production — Precision,Headcount,0.25,67341672.84,16835418.21
+CC08,Logistics & Warehousing,CC01,Production — Industrial,Revenue_Share,0.45,23921933.56,10764870.102
+CC08,Logistics & Warehousing,CC02,Production — Safety,Revenue_Share,0.3,23921933.56,7176580.067999999
+CC08,Logistics & Warehousing,CC03,Production — Precision,Revenue_Share,0.25,23921933.56,5980483.39
+CC09,IT & Digital,CC01,Production — Industrial,Headcount,0.4,6451265.84,2580506.336
+CC09,IT & Digital,CC02,Production — Safety,Headcount,0.35,6451265.84,2257943.0439999998
+CC09,IT & Digital,CC03,Production — Precision,Headcount,0.25,6451265.84,1612816.46
+CC10,Quality Assurance,CC01,Production — Industrial,Production_Volume,0.35,7973977.86,2790892.251
+CC10,Quality Assurance,CC02,Production — Safety,Production_Volume,0.4,7973977.86,3189591.1440000003
+CC10,Quality Assurance,CC03,Production — Precision,Production_Volume,0.25,7973977.86,1993494.465

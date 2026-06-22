@@ -1,0 +1,10 @@
+Product_Group_ID,Product_Group_Name,Division_ID,Primary_Raw_Material,Secondary_Raw_Material,Material_Cost_Pct,Gross_Margin_Target_Pct,Supply_Chain_Risk,COVID_Demand_Impact
+PG01,Industrial Adhesives,DIV01,Polymers,Solvents,0.3,0.44,Medium,Negative
+PG02,Abrasive Systems,DIV01,Minerals,Resins,0.26,0.47,Low,Negative
+PG03,Industrial Tapes,DIV01,Polymers,Adhesives,0.28,0.45,Medium,Neutral
+PG04,Safety Helmets,DIV02,Plastics,,0.23,0.51,Low,Positive
+PG05,Respiratory Protection,DIV02,Filters,Elastomers,0.25,0.53,Medium,Positive
+PG06,Hearing Protection,DIV02,Foam,Electronics,0.2,0.55,Low,Neutral
+PG07,Precision Sensors,DIV03,Electronics,Metals,0.36,0.38,High,Negative
+PG08,Micro-Connectors,DIV03,Copper,Plastics,0.38,0.36,High,Negative
+PG09,Optical Films,DIV03,Polymers,Chemicals,0.33,0.4,Medium,Neutral

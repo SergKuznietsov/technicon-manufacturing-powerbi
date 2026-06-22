@@ -1,0 +1,14 @@
+Material_ID,Material_Name,Material_Category,Baseline_Price_EUR,Supply_Risk
+MAT01,Copper,Metals,8.5,High
+MAT02,Polymers,Polymers,2.2,Medium
+MAT03,Plastics,Polymers,1.8,Low
+MAT04,Electronics,Electronics,45.0,High
+MAT05,Metals,Metals,4.5,Medium
+MAT06,Minerals,Raw_Minerals,0.8,Low
+MAT07,Resins,Chemicals,3.2,Medium
+MAT08,Solvents,Chemicals,2.5,Medium
+MAT09,Adhesives,Chemicals,5.5,Low
+MAT10,Elastomers,Polymers,4.0,Medium
+MAT11,Chemicals,Chemicals,3.5,Medium
+MAT12,Filters,Components,12.0,Low
+MAT13,Foam,Polymers,1.5,Low

@@ -1,0 +1,5 @@
+Customer_Segment_ID,Customer_Segment_Name,Typical_Payment_Days,Crisis_Payment_Days,Revenue_Concentration,Credit_Risk_Rating
+SEG01,Enterprise OEM,45,65,High,A
+SEG02,SMB Distributors,30,50,Medium,B
+SEG03,Government & Public,60,75,Low,A
+SEG04,Direct End-Users,15,25,Low,C

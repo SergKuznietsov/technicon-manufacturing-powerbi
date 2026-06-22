@@ -1,0 +1,235 @@
+Key,EN,DE,Category
+# --- Global / Shared ---,,,
+lang_english,English,Englisch,global
+lang_german,German,Deutsch,global
+company_name,TechniCon Manufacturing GmbH,TechniCon Manufacturing GmbH,global
+currency,€,€,global
+year,Year,Jahr,global
+quarter,Quarter,Quartal,global
+month,Month,Monat,global
+ytd,Year-to-Date,Jahresbisher (YTD),global
+py,Prior Year,Vorjahr,global
+yoy_change,YoY Change,Veränderung ggü. Vorjahr,global
+business_unit,Business Unit,Geschäftsbereich,global
+product_line,Product Line,Produktlinie,global
+period,Period,Periode,global
+monthly,Monthly,Monatlich,global
+quarterly,Quarterly,Quartalsweise,global
+annual,Annual,Jährlich,global
+total,Total,Gesamt,global
+of_revenue,% of Revenue,% vom Umsatz,global
+trend,Trend,Trend,global
+no_data,No data available,Keine Daten verfügbar,global
+last_updated,Last Updated,Zuletzt aktualisiert,global
+page,Page,Seite,global
+filter,Filter,Filter,global
+all,All,Alle,global
+select,Select,Auswählen,global
+,,,
+# --- P&L Dashboard (Project 1) ---,,,
+pnl_title,Profit & Loss,Gewinn- und Verlustrechnung,pnl
+pnl_overview,P&L Overview,GuV Übersicht,pnl
+pnl_detail,P&L Detail,GuV Detail,pnl
+pnl_margin_analysis,Margin Analysis,Margenanalyse,pnl
+revenue,Revenue,Umsatzerlöse,pnl
+net_revenue,Net Revenue,Nettoumsatz,pnl
+cogs,Cost of Goods Sold,Herstellungskosten (COGS),pnl
+gross_profit,Gross Profit,Bruttoergebnis,pnl
+gross_margin,Gross Margin,Bruttomarge,pnl
+sga,Selling General & Administrative,Vertriebs- und Verwaltungskosten (SG&A),pnl
+rd_expense,Research & Development,Forschung & Entwicklung (F&E),pnl
+operating_income,Operating Income,Betriebsergebnis (EBIT),pnl
+operating_margin,Operating Margin,Operative Marge,pnl
+ebitda,EBITDA,EBITDA,pnl
+ebitda_margin,EBITDA Margin,EBITDA-Marge,pnl
+da,Depreciation & Amortization,Abschreibungen (AfA),pnl
+ebit,EBIT,EBIT,pnl
+interest_expense,Interest Expense,Zinsaufwand,pnl
+interest_income,Interest Income,Zinserträge,pnl
+ebt,Earnings Before Tax,Ergebnis vor Steuern (EBT),pnl
+income_tax,Income Tax,Ertragsteuern,pnl
+net_income,Net Income,Jahresüberschuss,pnl
+net_margin,Net Margin,Nettomarge,pnl
+other_income,Other Income/Expense,Sonstiges Ergebnis,pnl
+waterfall_title,Revenue to Net Income Bridge,Umsatz-zu-Gewinn-Brücke,pnl
+margin_trends,Margin Trends,Margenentwicklung,pnl
+,,,
+# --- Budget vs Actual (Project 2) ---,,,
+bva_title,Budget vs Actual,Plan-Ist-Vergleich,bva
+bva_overview,BvA Overview,Plan-Ist Übersicht,bva
+bva_variance_detail,Variance Detail,Abweichungsdetail,bva
+bva_trend,Variance Trend,Abweichungsentwicklung,bva
+budget,Budget,Plan,bva
+plan,Plan,Plan,bva
+actual,Actual,Ist,bva
+forecast,Forecast,Prognose (Forecast),bva
+fc1,Forecast 1 (FC1),Prognose 1 (FC1),bva
+fc2,Forecast 2 (FC2),Prognose 2 (FC2),bva
+variance,Variance,Abweichung,bva
+variance_pct,Variance %,Abweichung %,bva
+variance_abs,Absolute Variance,Absolute Abweichung,bva
+favorable,Favorable,Günstig,bva
+unfavorable,Unfavorable,Ungünstig,bva
+on_target,On Target,Im Zielkorridor,bva
+over_budget,Over Budget,Über Budget,bva
+under_budget,Under Budget,Unter Budget,bva
+budget_utilization,Budget Utilization,Budgetauslastung,bva
+plan_fact,Plan-Fact Analysis,Plan-Ist-Analyse,bva
+cumulative_variance,Cumulative Variance,Kumulierte Abweichung,bva
+,,,
+# --- Cash Flow Dashboard (Project 3) ---,,,
+cf_title,Cash Flow Statement,Kapitalflussrechnung,cashflow
+cf_overview,Cash Flow Overview,Cashflow Übersicht,cashflow
+cf_waterfall,Cash Flow Waterfall,Cashflow Wasserfall,cashflow
+cf_forecast,Cash Flow Forecast,Cashflow-Prognose,cashflow
+operating_cf,Operating Cash Flow,Operativer Cashflow,cashflow
+investing_cf,Investing Cash Flow,Investitions-Cashflow,cashflow
+financing_cf,Financing Cash Flow,Finanzierungs-Cashflow,cashflow
+free_cash_flow,Free Cash Flow (FCF),Freier Cashflow (FCF),cashflow
+net_cash_flow,Net Cash Flow,Netto-Cashflow,cashflow
+cash_beginning,Cash at Beginning,Anfangsbestand liquide Mittel,cashflow
+cash_ending,Cash at End,Endbestand liquide Mittel,cashflow
+cash_burn_rate,Cash Burn Rate,Cash-Verbrauchsrate,cashflow
+cash_runway,Cash Runway,Liquiditätsreichweite,cashflow
+rolling_forecast,Rolling 13-Week Forecast,Rollierender 13-Wochen-Forecast,cashflow
+cash_conversion,Cash Conversion Rate,Cashflow-Konversionsrate,cashflow
+capex,Capital Expenditures,Investitionsausgaben (CAPEX),cashflow
+,,,
+# --- Working Capital Management (Project 4) ---,,,
+wc_title,Working Capital Management,Working Capital Management,wc
+wc_overview,Working Capital Overview,Working Capital Übersicht,wc
+wc_components,WC Components,WC-Komponenten,wc
+wc_trend,WC Trend Analysis,WC-Trendanalyse,wc
+working_capital,Working Capital,Betriebskapital (Working Capital),wc
+current_assets,Current Assets,Umlaufvermögen,wc
+current_liabilities,Current Liabilities,Kurzfristige Verbindlichkeiten,wc
+accounts_receivable,Accounts Receivable,Forderungen aus L&L,wc
+accounts_payable,Accounts Payable,Verbindlichkeiten aus L&L,wc
+inventory,Inventory,Vorräte,wc
+dso,Days Sales Outstanding (DSO),Debitorenlaufzeit (DSO),wc
+dpo,Days Payable Outstanding (DPO),Kreditorenlaufzeit (DPO),wc
+dio,Days Inventory Outstanding (DIO),Lagerreichweite (DIO),wc
+ccc,Cash Conversion Cycle,Cash Conversion Cycle (CCC),wc
+ccc_days,CCC (Days),CCC (Tage),wc
+wc_ratio,Working Capital Ratio,Working Capital Quote,wc
+current_ratio,Current Ratio,Liquidität 3. Grades,wc
+quick_ratio,Quick Ratio,Liquidität 2. Grades,wc
+overdue,Overdue,Überfällig,wc
+aging_analysis,Aging Analysis,Fälligkeitsanalyse,wc
+days,Days,Tage,wc
+,,,
+# --- Cost Center Reporting (Project 5) ---,,,
+cc_title,Cost Center Reporting,Kostenstellenrechnung,costcenter
+cc_overview,Cost Center Overview,Kostenstellen Übersicht,costcenter
+cc_allocation,Overhead Allocation,Gemeinkostenumlage,costcenter
+cc_detail,Cost Center Detail,Kostenstellen Detail,costcenter
+cost_center,Cost Center,Kostenstelle,costcenter
+department,Department,Abteilung,costcenter
+direct_costs,Direct Costs,Einzelkosten,costcenter
+indirect_costs,Indirect Costs,Gemeinkosten,costcenter
+overhead,Overhead,Gemeinkosten,costcenter
+overhead_rate,Overhead Rate,Gemeinkostenzuschlag,costcenter
+allocation_key,Allocation Key,Verteilungsschlüssel,costcenter
+fixed_costs,Fixed Costs,Fixkosten,costcenter
+variable_costs,Variable Costs,Variable Kosten,costcenter
+cost_type,Cost Type,Kostenart,costcenter
+personnel_costs,Personnel Costs,Personalkosten,costcenter
+material_costs,Material Costs,Materialkosten,costcenter
+contribution_margin,Contribution Margin,Deckungsbeitrag,costcenter
+cm1,Contribution Margin I,Deckungsbeitrag I,costcenter
+cm2,Contribution Margin II,Deckungsbeitrag II,costcenter
+cost_driver,Cost Driver,Kostentreiber,costcenter
+absorption_rate,Absorption Rate,Zuschlagssatz,costcenter
+,,,
+# --- Sales & Revenue Analytics (Project 6) ---,,,
+sales_title,Sales & Revenue Analytics,Umsatz- und Vertriebsanalyse,sales
+sales_overview,Sales Overview,Vertriebsübersicht,sales
+sales_product_mix,Product Mix Analysis,Produktmix-Analyse,sales
+sales_customer,Customer Analytics,Kundenanalyse,sales
+sales_volume,Sales Volume,Absatzmenge,sales
+avg_selling_price,Average Selling Price,Durchschnittlicher Verkaufspreis,sales
+revenue_growth,Revenue Growth,Umsatzwachstum,sales
+units_sold,Units Sold,Verkaufte Einheiten,sales
+price_effect,Price Effect,Preiseffekt,sales
+volume_effect,Volume Effect,Mengeneffekt,sales
+mix_effect,Mix Effect,Mixeffekt,sales
+top_customers,Top Customers,Top-Kunden,sales
+customer_concentration,Customer Concentration,Kundenkonzentration,sales
+new_customers,New Customers,Neukunden,sales
+lost_customers,Lost Customers,Verlorene Kunden,sales
+avg_order_value,Average Order Value,Durchschnittlicher Auftragswert,sales
+hit_rate,Hit Rate,Abschlussquote,sales
+product_mix,Product Mix,Produktmix,sales
+regional_breakdown,Regional Breakdown,Regionale Aufschlüsselung,sales
+yoy_growth,YoY Growth,Wachstum ggü. Vorjahr,sales
+,,,
+# --- Scenario Planning / What-If (Project 7) ---,,,
+scenario_title,Scenario Planning,Szenarioplanung,scenario
+scenario_overview,Scenario Overview,Szenario Übersicht,scenario
+scenario_comparison,Scenario Comparison,Szenariovergleich,scenario
+scenario_sensitivity,Sensitivity Analysis,Sensitivitätsanalyse,scenario
+base_case,Base Case,Basisszenario,scenario
+best_case,Best Case,Optimistisches Szenario,scenario
+worst_case,Worst Case,Pessimistisches Szenario,scenario
+scenario,Scenario,Szenario,scenario
+assumption,Assumption,Annahme,scenario
+impact,Impact,Auswirkung,scenario
+sensitivity,Sensitivity,Sensitivität,scenario
+parameter,Parameter,Parameter,scenario
+price_change,Price Change,Preisänderung,scenario
+volume_change,Volume Change,Mengenänderung,scenario
+cost_change,Cost Change,Kostenänderung,scenario
+fx_rate,Exchange Rate,Wechselkurs,scenario
+what_if,What-If Analysis,Was-wäre-wenn-Analyse,scenario
+breakeven,Break-Even Point,Gewinnschwelle (Break-Even),scenario
+monte_carlo,Monte Carlo Simulation,Monte-Carlo-Simulation,scenario
+,,,
+# --- KPI Scorecard (Project 8) ---,,,
+kpi_title,KPI Scorecard,KPI Scorecard,kpi
+kpi_executive,Executive Summary,Management Summary,kpi
+kpi_financial,Financial KPIs,Finanzielle Kennzahlen,kpi
+kpi_operational,Operational KPIs,Operative Kennzahlen,kpi
+target,Target,Ziel,kpi
+actual_value,Actual,Ist-Wert,kpi
+achievement,Achievement,Zielerreichung,kpi
+status,Status,Status,kpi
+on_track,On Track,Im Plan,kpi
+at_risk,At Risk,Gefährdet,kpi
+off_track,Off Track,Nicht im Plan,kpi
+rag_status,RAG Status,Ampelstatus,kpi
+red,Red,Rot,kpi
+amber,Amber,Gelb,kpi
+green,Green,Grün,kpi
+sparkline,Sparkline,Sparkline,kpi
+vs_target,vs Target,ggü. Ziel,kpi
+vs_prior_year,vs Prior Year,ggü. Vorjahr,kpi
+improvement,Improvement,Verbesserung,kpi
+deterioration,Deterioration,Verschlechterung,kpi
+,,,
+# --- CAPEX Tracking (Project 9) ---,,,
+capex_title,CAPEX Project Tracking,CAPEX-Projektcontrolling,capex
+capex_overview,CAPEX Overview,CAPEX Übersicht,capex
+capex_project_detail,Project Detail,Projektdetail,capex
+capex_earned_value,Earned Value Analysis,Earned Value Analyse,capex
+project,Project,Projekt,capex
+project_name,Project Name,Projektname,capex
+project_status,Project Status,Projektstatus,capex
+approved_budget,Approved Budget,Genehmigtes Budget,capex
+spent_to_date,Spent to Date,Bisherige Ausgaben,capex
+remaining_budget,Remaining Budget,Restbudget,capex
+completion_pct,Completion %,Fertigstellungsgrad %,capex
+planned_completion,Planned Completion,Geplante Fertigstellung,capex
+actual_completion,Actual Completion,Tatsächliche Fertigstellung,capex
+roi,Return on Investment (ROI),Kapitalrentabilität (ROI),capex
+payback_period,Payback Period,Amortisationszeit,capex
+npv,Net Present Value (NPV),Kapitalwert (NPV),capex
+irr,Internal Rate of Return (IRR),Interner Zinsfuß (IRR),capex
+pv,Planned Value (PV),Plankosten (PV),capex
+ev,Earned Value (EV),Fertigstellungswert (EV),capex
+ac,Actual Cost (AC),Ist-Kosten (AC),capex
+cpi,Cost Performance Index (CPI),Kostenleistungsindex (CPI),capex
+spi,Schedule Performance Index (SPI),Terminleistungsindex (SPI),capex
+eac,Estimate at Completion (EAC),Schätzkosten bei Fertigstellung (EAC),capex
+cost_overrun,Cost Overrun,Kostenüberschreitung,capex
+on_schedule,On Schedule,Im Zeitplan,capex
+delayed,Delayed,Verzögert,capex

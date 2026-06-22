@@ -1,0 +1,11 @@
+Cost_Center_ID,Cost_Center_Name,Division_ID,Cost_Type,Is_Direct
+CC01,Production — Industrial,DIV01,Production,True
+CC02,Production — Safety,DIV02,Production,True
+CC03,Production — Precision,DIV03,Production,True
+CC04,Sales — DACH,DIV01,Sales,False
+CC05,Sales — International,DIV01,Sales,False
+CC06,R&D Center,DIV01,R&D,False
+CC07,General & Administration,DIV01,Admin,False
+CC08,Logistics & Warehousing,DIV01,Logistics,False
+CC09,IT & Digital,DIV01,Admin,False
+CC10,Quality Assurance,DIV01,Production,False
